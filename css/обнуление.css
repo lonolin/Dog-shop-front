@@ -1,0 +1,43 @@
+/* очищаем все отступы и границы */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+/* меняет подсчет ширины блока  */
+*,*:before,*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* убирает линии обводки у некоторых браузеров */
+:focus,:active {outline: none;}
+a:focus,a:active {outline: none;}
+
+/* делаем эти тэги блочными */
+nav,footer,header,aside{display:block;}
+ 
+/*уравнивает повежение шрифтов и элементов для разных браузеров в т.ч не позволяет произвольно увиличиваться шрифту */
+html,body {
+height: 100%;
+width: 100%;
+font-size: 100%;
+line-height: 100%;
+font-size: 14px;
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+/* теперь эти тэги наследуют семейство шрифта */
+input,button,textarea { font-family: inherit;}
+
+/* чистятся стили в маркированных списках и убираются некоторы особенности разныъ браузеров */
+input::-ms-clear{display: none;}
+button {cursor:pointer;}
+button::-moz-focus-inner {padding: 0; border:0;}
+a,a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+ul li{list-style: none;}
+img {vertical-align: top;}
+
+/* обнуление заголовков h */
+h1,h2,h3,h4,h5,h6 {font-size:inherit; font-weight: 400;}
