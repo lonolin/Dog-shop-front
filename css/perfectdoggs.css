@@ -1,0 +1,375 @@
+/* очищаем все отступы и границы */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+/* меняет подсчет ширины блока  */
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* убирает линии обводки у некоторых браузеров */
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+
+/* делаем эти тэги блочными */
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+/*уравнивает повежение шрифтов и элементов для разных браузеров в т.ч не позволяет произвольно увиличиваться шрифту */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 100%;
+    font-size: 15px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+/* теперь эти тэги наследуют семейство шрифта */
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+/* чистятся стили в маркированных списках и убираются некоторы особенности разныъ браузеров */
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+
+/* обнуление заголовков h */
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+} */
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: "Georgia";
+    src: url("../fonts/georgia.eot");
+    src: local("☺"), url("fonts/georgia.woff") format("woff"), url("fonts/georgia.ttf") format("truetype"),
+        url("fonts/georgia.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    color: #545454;
+    font-family: Georgia;
+    font-size: 15px;
+    height: 100%;
+    line-height: 1;
+}
+
+.georgia {
+    font-family: Georgia;
+    font-size: 44px;
+    color: #f1cdb3;
+}
+.text {
+    font-family: Arial;
+    font-size: 13px;
+    color: #ffffff;
+}
+.wrapper {
+    /* ????????? */
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+._container {
+    max-width: 1200px;
+    padding: 10px;
+    margin: 0px auto;
+    box-sizing: content-box;
+}
+
+/* --------------------HEADER--------------------------------------------------------------------------------------- */
+.first_block {
+    background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+}
+.header {
+    position: static;
+    min-height: 60px;
+    width: 100%;
+    z-index: 10;
+    left: 40px;
+    top: 60px;
+}
+.header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.header_logo {
+    display: flex;
+    flex-direction: column;
+}
+.header__menu {
+    font-family: Arial;
+    font-size: 15px;
+    color: #fafafa;
+}
+@media (max-width: 250px) {
+    .header__menu {
+        margin: 0px 0px 0px 15px;
+    }
+}
+.menu_list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    line-height: 1.5;
+    padding: 5px;
+}
+@media (max-width: 450px) {
+    .menu_list {
+        flex-direction: column;
+        line-height: 2;
+    }
+}
+.menu_item:not(:last-child) {
+    margin: 0px 35px 0px 0px;
+}
+.menu_link {
+    color: inherit;
+}
+
+.menu_link:hover {
+    text-decoration: none;
+    border-bottom: 3px solid #f1cdb3;
+}
+/* ---------------------------MAIN-------------------------------------------------------------------------------------- */
+.main {
+    flex: 1 1 auto;
+    margin-top: 30px;
+}
+.notpeople {
+    display: flex;
+    flex-direction: row;
+}
+.notpeople_text {
+    display: flex;
+    flex-direction: column;
+    color: #cdcdcd;
+    margin-right: 42px;
+    font-size: 15px;
+    font-family: Arial;
+    font-weight: 400;
+    line-height: calc(24 / 16 * 100%);
+    width: 460px;
+    height: 72px;
+    z-index: 1;
+}
+.notpeople_text > h2 {
+    display: flex;
+    color: #ffffff;
+    font-family: Georgia;
+    font-weight: 400;
+    margin-bottom: 42px;
+    width: 310px;
+    height: 114px;
+    line-height: calc(57 / 44 * 100%);
+    font-size: 44px;
+}
+.make_friend_button {
+    background-color: #f1cdb3;
+    min-height: 52px;
+    width: 207px;
+    border-radius: 100px;
+    font-family: Georgia;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: calc(22.1 / 17 * 100%);
+    margin-top: 41px;
+    letter-spacing: 0.6px;
+}
+.notpeople_dog {
+    width: 698px;
+    height: 728px;
+}
+@media (max-width: 1040px) {
+    .notpeople_dog img {
+        object-position: left;
+    }
+}
+/* ---------------------------ВТОРОЙ БЛОК-------------------------------------------------------------------------------------- */
+.second_block {
+    background-color: #ffffff;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+    height: 588px;
+    top: 908px;
+}
+.info_img {
+    margin: 80px 120px 100px 175px;
+    width: 300px;
+    height: 408px;
+}
+.info_text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 94px 175px 0px 0px;
+    font-family: Arial;
+    font-size: 15px;
+    line-height: calc(24/15 * 100%);
+}
+.info_text>h2 {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: calc(45.5/35 * 100%);
+    letter-spacing: 0.6px;
+    width: 370px;
+    height: 90px;
+}
+.stats {
+    width: 430px;
+    height: 96px;
+}
+.shelter_staff {
+    width: 430px;
+    height: 144px;
+}
+.info_text>p:not(:last-child) {
+    margin: 25px 0px 25px 0px;
+}
+/* ---------------------------ТРЕТИЙ БЛОК-------------------------------------------------------------------------------------- */
+.third_block {
+    background-color: #F6F6F6;
+}
+.looking_hous {
+    display: flex;
+    flex-direction: column;
+    height: 877px;
+    top: 1496px;
+    align-items: center;
+}
+.prewiew {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: calc(45.5/35*100%);
+    width: 400px;
+    height: 90px;
+    text-align: center;
+
+}
+.catalog {
+    display: flex;
+    flex-direction: row;
+}
+.pet {
+    display: flex;
+    flex-direction: column;
+    background-color: #FAFAFA;
+    width: 270px;
+    height: 435px;
+    align-items: center;
+    margin: 60px 90px 60px 53px;
+}
+.pet_text {
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: calc(22.72/20*100%);
+    letter-spacing: 0.6px;
+    padding: 30px 98px 30px 98px;
+}
+.button_pet {
+    border: 2px solid #f1cdb3;
+    background-color: #F6F6F6;
+    border-radius: 100px;
+    width: 207px;
+    height: 52px;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: calc(22/17*100%);
+    letter-spacing: 0.6px;
+}
+._jenny {
+    margin: 60px 0px 60px 0px ;
+}
+._woody {
+    margin: 60px 53px 60px 90px;
+}
+.more_info {
+    border-radius: 100px;
+    background-color: #F1CDB3;
+    width: 261px;
+    height: 52px;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+}
+.select_button {
+    background-color: #FAFAFA;
+    border-radius: 50%;
+    border: 1px solid  #F1CDB3;
+    width: 42px;
+    height: 42px;
+    padding: 0px;
+    
+}
+.img-arrow {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.center_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* ---------------------------footer-------------------------------------------------------------------------------------- */
+/* .footer {
+} */
